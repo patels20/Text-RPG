@@ -1,8 +1,7 @@
 #include <string>
 #include <iostream>
 #include <random>
-#ifndef PLAYER_H
-#define PLAYER_H
+#pragma once
 
 #define INVENT_SIZE 10
 
@@ -10,14 +9,15 @@ using namespace std;
 
 class player
 {
-    private:
+
+    public:
         string name;
         int health;
         int attack;
         int experience;
         int cash;
         int energy;
-    public:
+
         player()
         {
             //Default Constructor;
@@ -82,5 +82,3 @@ class player
             cout << energy << endl;
         }
 };
-
-#endif // PLAYER_H
