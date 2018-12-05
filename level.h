@@ -1,29 +1,48 @@
 #include <iostream>
+#include "player.h"
+#include "monster.h"
 #include <string>
 #include <random>
 
 class level{
     private:
-        int level;
+        int levelNum;
         string endDestination;
         int numMonsters;
     public:
-        int getLevel(lvl)
+        level()
         {
-            level = lvl;
+            //Default Constructor
         }
-        string endDest(dest)
+        level(int l, int eD, int nM)
+        {
+            setLevel(l);
+            setendDest(eD);
+            setnumMon(nM);
+        }
+        ~level()
+        {
+            //Destructor
+        }
+        int setLevel(int lvl)
+        {
+            levelNum = lvl;
+        }
+        string setendDest(string dest)
         {
             endDestination = dest;
         }
-        int monsters(most)
+        int setnumMon(int most)
         {
             numMonsters = most;
         }
-
-
-
-
-
+        void getLevel()
+        {
+            cout << level << endl;
+        }
+        void getendDest()
+        {
+            cout << endDestination << endl;
+        }
 
 };
