@@ -5,6 +5,8 @@
 #define PLAYER_H
 #define INVENT_SIZE 10
 
+using namespace std;
+
 class player
 {
     private:
@@ -18,8 +20,8 @@ class player
         int energy;
         string inventory[INVENT_SIZE];
     public:
-       player(){}  //constructor  
-       ~player(); // destructor 
+       player(){}  //constructor
+       ~player(); // destructor
         string setName(nameVar)
         {
             name = nameVar;
