@@ -1,7 +1,6 @@
 #include <string>
 #include <iostream>
 #include <random>
-
 #ifndef PLAYER_H
 #define PLAYER_H
 
