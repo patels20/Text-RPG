@@ -3,6 +3,7 @@
 #include <random>
 #ifndef PLAYER_H
 #define PLAYER_H
+
 #define INVENT_SIZE 10
 
 using namespace std;
@@ -12,50 +13,55 @@ class player
     private:
         string name;
         int health;
-        int magicLevel;
-        int speed;
         int attack;
         int experience;
         int cash;
         int energy;
-        string inventory[INVENT_SIZE];
     public:
-       player(){}  //constructor
+        player()
+        {
+            //Default Constructor;
+        }
+       player(string n, int h,int a, int e, int c, int en)
+       {
+           //Primary constructor
+           setName(n);
+           setHealth(h);
+           setAttack(a);
+           setExperience(e);
+           setCash(c);
+           setEnergy(en);
+        }
        ~player(); // destructor
-        string setName(nameVar)
+        string setName(string nameVar)
         {
             name = nameVar;
         }
-        int setHealth(healthVar)
+        int setHealth(int healthVar)
         {
             health = healthVar;
         }
-        int setmageLevel(magic)
-        {
-            magicLevel = magic;
-        }
-        int setmovement(moveSpeed)
-        {
-            speed = moveSpeed;
-        }
-        int setAttack(attVar)
+        int setAttack(int attVar)
         {
             attack = attVar;
         }
-        int setExperience(exp)
+        int setExperience(int exp)
         {
             experience = exp;
         }
-        int setEnergy(egy)
+        int setEnergy(int egy)
         {
             energy = egy;
         }
-        int setCash(wallet)
+        int setCash(int wallet)
         {
             cash = wallet;
         }
+        void getName()
+        {
+            cout << name;
+        }
 
 };
-
 
 #endif // PLAYER_H
