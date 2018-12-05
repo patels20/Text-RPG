@@ -48,9 +48,27 @@ class monster
         {
             level =levl;
         }
+        void getName()
+        {
+            cout << name << endl;
+        }
+        void getHealth()
+        {
+            cout << health << endl;
+        }
+        void getAttack()
+        {
+            cout << attack << endl;
+        }
+        void getLevel()
+        {
+            cout << level << endl;
+        }
+        
 
 
 
 };
+
 
 #endif // MONSTER
