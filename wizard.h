@@ -1,8 +1,5 @@
-#ifndef WIZARD_H
-#define WIZARD_H
-
 #include "player.h"
-
+#pragma once
 
 class wizard : public player
 {
