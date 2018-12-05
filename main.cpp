@@ -8,6 +8,8 @@ int main()
     cout << "\n\n(1)\nWizard\nWeapon: Staff\n";
     cout << "\n\n(2)\nArcher\nWeapon: Bow and Arrow\n";
     cout << "\n\n(3)\nWarrior\nWeapon: Shield and Sword\n";
+	
+	//Create Wizard = myWizard wizard("God",100,20,0,0,100);
     return 0;
     if(person > 3)
 		{
