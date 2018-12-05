@@ -15,6 +15,7 @@ class player
         int attack;
         int experience;
         int cash;
+        int energy;
         string inventory[INVENT_SIZE];
     public:
        player(){}  //constructor  
@@ -42,6 +43,10 @@ class player
         int setExperience(exp)
         {
             experience = exp;
+        }
+        int setEnergy(egy)
+        {
+            energy = egy;
         }
         int setCash(wallet)
         {
