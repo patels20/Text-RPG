@@ -3,8 +3,7 @@
 #include <random>
 #include "player.h"
 #include "level.h"
-#ifndef MONSTER.H
-
+#pragma once
 
 using namespace std;
 
@@ -64,11 +63,6 @@ class monster
         {
             cout << level << endl;
         }
-        
-
 
 
 };
-
-
-#endif // MONSTER
