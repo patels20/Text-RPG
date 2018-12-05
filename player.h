@@ -59,9 +59,28 @@ class player
         }
         void getName()
         {
-            cout << name;
+            cout << name << endl;
         }
-
+        void getHealth()
+        {
+            cout << health << endl;
+        }
+        void getAttack()
+        {
+            cout << attack << endl;
+        }
+        void getExp()
+        {
+            cout << experience << endl;
+        }
+        void getCash()
+        {
+            cout << cash << endl;
+        }
+        void getEnergy()
+        {
+            cout << energy << endl;
+        }
 };
 
 #endif // PLAYER_H
