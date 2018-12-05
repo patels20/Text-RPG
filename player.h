@@ -3,7 +3,6 @@
 #include <random>
 #ifndef PLAYER_H
 #define PLAYER_H
-
 #define INVENT_SIZE 10
 
 class player
@@ -18,6 +17,8 @@ class player
         int cash;
         string inventory[INVENT_SIZE];
     public:
+       player(){}  //constructor  
+       ~player(); // destructor 
         string setName(nameVar)
         {
             name = nameVar;
