@@ -17,11 +17,13 @@ class player
     public:
         string name;
         int health;
-        int energy;
         int attack;
         int defense;
         int cash;
         int progression;
+		int gas;
+		int healthpack;
+		int redbull;
 
         player()
         {
@@ -39,34 +41,34 @@ class player
 
         }
       // ~player(); // destructor
-      void setProg(int pro)
-      {
-          progression = pro;
-      }
-      int getProg()
-      {
-          return progression;
-      }
-      void setDefense(int def)
-      {
-          defense = def;
-      }
-      int getDefense()
-      {
-          return defense;
-      }
-      void setName(string nameVar)
-      {
-          name = nameVar;
-      }
-      void setHealth(int healthVar)
-      {
-          health = healthVar;
-      }
-      void setAttack(int attVar)
-      {
-        attack = attVar;
-      }
+	void setProg(int pro)
+	{
+		progression = pro;
+	}
+	int getProg()
+	{
+		return progression;
+	}
+	void setDefense(int def)
+	{
+		defense = def;
+	}
+	int getDefense()
+	{
+		return defense;
+	}
+	void setName(string nameVar)
+	{
+		name = nameVar;
+	}
+	void setHealth(int healthVar)
+	{
+		health = healthVar;
+	}
+	void setAttack(int attVar)
+	{
+		attack = attVar;
+	}
     void setCash(int wallet)
     {
         cash = wallet;
@@ -82,10 +84,6 @@ class player
     int getAttack()
     {
         return attack;
-    }
-    int getExp()
-    {
-        return experience;
     }
     int getCash()
     {
