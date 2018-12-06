@@ -1,277 +1,157 @@
 #include "player.h"
 #include "monster.h"
-#include "fight.h"
 
 using namespace std;
 
-void level1(player player1, monster mon)
+int userfightInt = 0;
+
+//Success Equations
+void fight(player player1, monster mon)
 {
-    char userInt;
-    system("cls");
-    cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
-    cout << "\t\t\t\t\t\tWelcome To Level 1" << endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
-    Sleep(1000);
-    cout << "You're walking in the woods.  There's no one around and your phone is dead.  Out of the corner of your eye, you spot him"<< endl;
-    Sleep(2500);
-    cout << "\t\t\t\t\t\t\tIt's SHIA LEBEOUF!" << endl;
-    Sleep(3000);
-    cout << "\t\t\t\tHe looks into your eyes, you can see theres blood on your face." << endl;
-    Sleep(2500);
-    cout << "\t\t\t\t\tMy God, theres blood everywhere!" << endl;
-    Sleep(2500);
-    a:
-    cout << "The choice is yours " << player1.getName()<< endl;
-    Sleep(2500);
-    cout <<"R : Run " << endl;
-    Sleep(900);
-    cout <<"F : Fight " << endl;
-    Sleep(900);
-    cout <<"Q : Quit Simulation " << endl;
-    cout <<"\nDecide : " << endl;
-    cin >> userInt;
-    system("cls");
+    bool won = false;
+    int playerAttack1 = player1.getAttack() - mon.getDefense();
+    int monsterAttack1 = mon.getAttack() - player1.getDefense();
+    int opac = 100 - player1.getDefense();
 
-    switch(userInt)
+    do
     {
+        do
+            {
 
-            case 'F':
-            case 'f':
-                fight(player1,mon);
+                int random = rand() % 100;
+                int random2 = rand() % 100;
+                if(player1.getProg() <= 2 && player1.getProg() >=1)
+                {
+                cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
+                cout << "\t\t\t"<<player1.getName()<<" Status \t\t\t\t "<<mon.getName()<<" Status" << endl;
+                cout << "\t\t\tHealth :" << player1.getHealth() << "\t\t\t\t Health : " << mon.getHealth() << endl;
+                cout << "\t\t\tAttack :" << player1.getAttack() << "\t\t\t\t Attack : " << mon.getAttack() << endl;
+                cout << "\t\t\tDefense :" << player1.getDefense() << "\t\t\t\t Defense : " << mon.getDefense() << endl;
+                cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
+                cout << "\t\t\t\t\t\t\tYou're Turn" << endl;
+                cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
+                cout << "\t\t\t\t\t1. Attack \t\t2.Dodge\t\t3.Heal"<< endl;
+                cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
+                cin >> userfightInt;
+                }
+                else
+                {
+                    cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
+                    cout << "\t\t\t"<<player1.getName()<<" Status \t\t\t\t "<<mon.getName()<<" Status" << endl;
+                    cout << "\t\t\tHealth :" << player1.getHealth() << "\t\t\t\t Health : " << mon.getHealth() << endl;
+                    cout << "\t\t\tAttack :" << player1.getAttack() << "\t\t\t\t Attack : " << mon.getAttack() << endl;
+                    cout << "\t\t\tDefense :" << player1.getDefense() << "\t\t\t\t Defense : " << mon.getDefense() << endl;
+                    cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
+                    cout << "\t\t\t\t\t\t\tYou're Turn" << endl;
+                    cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
+                    cout << "\t\t\t\t\t1. Attack \t\t2.Dodge\t\t3.Heal\t\t4.View Items"<< endl;
+                    cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
+                    cin >> userfightInt;
 
+                }
+                system("cls");
 
-            break;
-            case 'R':
-            case 'r':
-                cout << "You've Advanced to Level 2" << endl;
+                    switch(userfightInt)
+                    {
+                        case 1:
+                            if(random <=(player1.getAttack()*2)-20)
+                            {
+                            system("cls");
+                            cout << "You've landed a successful attack" << endl;
+                            cout << "Damage Dealt : " << playerAttack1 << endl;
+                            mon.setHealth(mon.getHealth()-playerAttack1);
+                            system("pause");
+                            system("cls");
+                                if(random2 <= 35)
+                                {
+                                    cout <<mon.getName() << " has successfully landed a hit." << endl;
+                                    cout << "You've taken " << monsterAttack1 << endl;
+                                    player1.setHealth((player1.getHealth()-monsterAttack1));
+                                }
+                                else
+                                {
+                                    cout << "Monster has missed an attack" << endl;
+                                }
+                            system("pause");
+                            system("cls");
+                            }
+                            else
+                            {
+                                system("cls");
+                                cout << "You've missed the attack" << endl;
+                                system("pause");
+                                system("cls");
+                                 if(random2 <= 35)
+                                {
+                                    cout <<mon.getName() << " has successfully landed a hit." << endl;
+                                    cout << "You've taken " << monsterAttack1 << endl;
+                                    player1.setHealth((player1.getHealth()-monsterAttack1));
+                                }
+                                else
+                                {
+                                    cout << "Monster has missed an attack" << endl;
+                                }
+                                system("pause");
+                                system("cls");
+                            }
+                            break;
+                        case 2:
+                            cout << "You've Dodge the attack" << endl;
+                            system("pause");
+                            system("cls");
+                            if(random2 <= 101)
+                            {
+                                cout << "Monster has missed his/her attack" << endl;
+                            system("pause");
+                            system("cls");
+                            }
+                            break;
+                        case 3:
+                            if(player1.health == 100)
+                            {
+                                cout << "Healing won't do anything when you're at full!" << endl;
+                            }
+                            else if((player1.health + 10) > 100)
+                            {
+                                cout << "You've healed to max!" << endl;
+                                player1.setHealth(100);
+                            }
+                            else
+                            {
+                                cout << "You've regained " << 10 << " health!" << endl;
+                                player1.setHealth(player1.health+10);
+                                cout << "Current Health :" << player1.getHealth() << endl;
+                            }
+                            system("pause");
+                            system("cls");
+                            break;
+                        case 4:
+                            system("cls");
+                            break;
+                        default:
+                            cout << "Invalid Fight Option" << endl;
+                            system("pause");
+                            system("cls");
+                            break;
+                    }
+            }
+
+            while(!(mon.health <= 0 || player1.health <= 0));   // 33 <= 0 or 44 <= 0
+            if(mon.health <= 0)
+            {
+                won = true;
                 player1.progression+=1;
-                system("pause");
-                system("cls");
-                break;
-            case 'q':
-            case 'Q':
-                exit(1);
-
-            default:
-                system("cls");
-                cout << "Invalid Input" << endl;
-                system("pause");
-                goto a;
-            break;
+            }
     }
-}
-void level2(player player1, monster mon)
-
-{
-
-char userInt;
-    system("cls");
-    cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
-    cout << "\t\t\t\t\t\tWelcome To Level 2" << endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
-    Sleep(1000);
-    cout << "\t\t\tYou have beaten Shia Lebeouf and are trying to find your way out of the woods." << endl;
-    Sleep(2500);
-    cout << "\t\t\t\t\t    Shia dropped $30 and it is now yours" << endl;
-    Sleep(2500);
-    cout << "\t\t\tYou start to find your way out of the woods when to your surprise you see a car." << endl;
-    Sleep(2500);
-    cout << "\t\t\t      As you slowly approach the car the homeless man who owns it sees you." << endl;
-	Sleep(2500);
-	cout << "\t\t\t      He point his knife at you and asks you for all your hard earned cash" << endl;
-    Sleep(2500);
-    cout << "\nDo you give him your money or fight for your life? "<< endl;
-    Sleep(1300);
-    cout <<"The choice is yours : " << endl;
-    Sleep(1000);
-    cout << "M : Give Money" << endl;
-    Sleep(900);
-    cout << "F : Fight " << endl;
-    Sleep(900);
-    cout <<"Q : Quit "<< endl;
-    Sleep(900);
-    cout <<"Decide : " ;
-    cin >> userInt;
-    system("cls");
-    switch(userInt)
+    while(!won);
+    if(player1.health > mon.health)
     {
-        case 'F':
-        case 'f':
-            fight(player1,mon);
-
-        break;
-        case 'M':
-        case 'm':
-            cout << "The kind heart of yours has been a horrendous decision" << endl;
-            Sleep(2000);
-            cout <<" Shia lebeouf used nuke " << endl;
-            Sleep(1000);
-            system("cls");
-            cout << "Game Over" << endl;
-            system("pause");
-            exit(1);
-            break;
-        case 'q':
-        case 'Q':
-            exit(1);
-
-        default:
-            cout << "Invalid Input" << endl;
-            break;
+        system("cls");
+        cout <<"**************************************************************************************************************************\n" << endl;
+         cout <<"\t\t\t\t\t\t  Congratulation you've won!" << endl;
+         cout <<"\t\t\t\t\t\t     You've beaten " << mon.getName() << endl;
+         cout <<"\t\t\t\t\t\tYou've Advanced to the next level \n" << endl;
+         cout <<"**************************************************************************************************************************\n" << endl;
+        system("pause");
     }
 }
-
-void level3(player player1, monster mon)
-{
-    char userInt;
-    system("cls");
-    cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
-    cout << "\t\t\t\t\t\tWelcome To Level 3" << endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
-    Sleep(1000);
-    cout << "\t\t\tYou have now killed the homeless guy and stolen his car. "<< endl;
-    Sleep(2000);
-    cout << "\t\tYou think you are in the clear and start to drive home ever so enthusiastically." << endl;
-    Sleep(2000);
-    cout << "\t\t\t  Unfortunately for you life sucks and the car runs out of gas. "<< endl;
-    Sleep(2000);
-    cout << "\t\t\t     But luckily for you, you end up at a gas station." << endl;
-    Sleep(2000);
-	cout << "     At this has station there is a clerk who tell you that you can buy the gas and upgrade your health for money.\n\n " << endl;
-	Sleep(2000);
-    cout << "\t\t\t\t\t\t You have 2 options. "<< endl;
-    Sleep(1000);
-    cout <<"\t\tYou fight the clerk and steal his gas and maybe steal a few bills out the register? "<< endl;
-    Sleep(1000);
-    cout << "\t\t\t\t\t\t\tor"<< endl;
-    Sleep(1100);
-    cout <<"\t\t\t\t\t     You can pay for the gas "<< endl;
-    Sleep(1500);
-    cout <<"P : Pay for gas"<<endl;
-    Sleep(900);
-    cout <<"F : Fight & Steal"<< endl;
-    Sleep(900);
-    cout <<"Decide : ";
-    cin >> userInt;
-    system("cls");
-     switch(userInt)
-    {
-        case 'F':
-        case 'f':
-            fight(player1,mon);
-
-        break;
-        case 'P':
-        case 'p':
-            cout << "Since you are an outstanding citizen and you follow the rules,";
-            cout << "You've Advanced to Level 4" << endl;
-            player1.progression+=1;
-            system("pause");
-            system("cls");
-            break;
-        default:
-            cout << "Invalid Input" << endl;
-            break;
-    }
-
-}
-
-void level4(player player1, monster mon){
-    int x;
-    char userInt;
-    system("cls");
-    cout << "------------------------------------------------------------------------------------------------------------------------ "<< endl;
-    cout << "\t\t\t\t\t\tWelcome To Level 4" << endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
-    Sleep(1000);
-    cout << "\t\t\t\t\tYou have now killed the sales clerk guy."<<endl;
-    Sleep(2000);
-    cout << "\t\t  At this point you think you are in the clear because you got away with two murders. " << endl;
-    Sleep(2000);
-    cout << "\t\t\t\tWhy wouldn't you think you could get away with anything." << endl;
-    Sleep(2000);
-    cout << "Because you just cannot catch a break a cop pulls you over on your way home because the car you stole from the homeless guy is not registered." << endl;
-    Sleep(2000);
-	cout << "\t\tAt this point in time you have blood stains all over your shirt and you know that the cop will arrest you. \n" << endl;
-	Sleep(2000);
-    cout << "\t\t\t\t\t\t You have 3 options. \n"<< endl;
-    Sleep(1200);
-    cout <<"\t\t\t\t  You can let the cop arrest you and confess \n"<< endl;
-    Sleep(1000);
-    cout <<"\t\t\t\t You fight the cop because you have nothing to lose. \n"<< endl;
-    Sleep(1000);
-    cout <<"\t\t\t\t\t\t   Bribe the cop.\n"<< endl;
-    Sleep(1500);
-    cout <<"A : Get Arrested & Confess " << endl;
-    Sleep(900);
-    cout <<"F : Fight the Cop" << endl;
-    Sleep(900);
-    cout <<"B : Bribe the Cop" << endl;
-    Sleep(900);
-    cout <<"Decide : ";
-    cin >> userInt;
-    system("cls");
-      switch(userInt)
-    {
-        case 'A':
-        case 'a':
-            cout << "Why wouldn't you go down fighting";
-        break;
-        case 'F':
-        case 'f':
-            {
-            fight(player1,mon);
-            break;
-            }
-        case 'B':
-        case 'b':
-            {
-            cout << "Enter in a 1 or a 2 to see if you successfully bribed the cop or not";
-            cin >> x;
-            if(x == 1){
-                cout << "Congrats you have moved onto level 5";
-                 player1.progression+=1;
-            }
-            if(x ==2){
-                cout << "You died of Smallpox because you are ill equipped for survival";
-            }
-            }
-        default:
-            cout << "Invalid Input" << endl;
-            break;
-    }
-
-}
-void level5(player player1, monster mon)
-{
-    char userInt;
-    system("cls");
-    cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
-    cout << "\t\t\t\t\t\tWelcome To Level 5" << endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
-    Sleep(1000);
-    cout << "\t\t\tYou have now made it all the to your home. "<< endl;
-    Sleep(2000);
-    cout << "\t\tIt has been a long and bloody day, all you want to do is go to bed." << endl;
-    Sleep(2000);
-    cout << "\t\t\tAs usual you can't catch a break because you have bad juju. "<< endl;
-    Sleep(2000);
-    cout << "\t\t\t Upon entering your house you see Thanos, the mad Titan, and you both lock eyes." << endl;
-    Sleep(2000);
-	cout << "   For some reason he chooses not to kill you instantly so he goes easy on you. Good luck fighting Thanos, whose biceps are bigger than your waist.\n\n " << endl;
-	Sleep(2000);
-    cout << "\t\t\t\t\t\t You have 0 options. "<< endl;
-    Sleep(1000);
-    cout <<"\t\tYou must fight the mad Titan? "<< endl;
-    Sleep(1000);
-    cout << "\t\t\t\t\t\t\tor"<< endl;
-    Sleep(1100);
-    Sleep(1500);
-    cout <<"F : Fight"<< endl;
-    Sleep(900);
-    cout <<"Decide : You do not have a choice just type in F or f. ";
-    cin >> userInt;
-    
-
-}
-
