@@ -19,12 +19,20 @@ int main()
     cout << "\n\n(3)\nWarrior\nWeapon: Shield and Sword\n";
 	//Create Wizard = myWizard wizard("God",100,20,0,0,100);
 	cin >> userInput;
-
+	for(int i = 1; i <= 5; i++){
 	switch(userInput){
         case 1:
+            player player1("God",100,100,30,20,0,0,1);
             //health,energy,attack,defense -Player
             //health,attack,defense - Monster
-            level1(player("God",100,100,30,20,0,0),monster("Shia",100,20,12));
+            if(player1.progression == 1)
+            {
+                level1(player1,monster("Shia",100,20,12));
+            }
+            if(player1.progression = 2)
+            {
+                level2(player1,monster("Shia",100,20,12));
+            }
             break;
       /*  case 2:
             cout << "Nothing" << endl;
@@ -36,6 +44,7 @@ int main()
         default:
             cout << " ok" << endl;
             */
+	}
 	}
     return 0;
 
