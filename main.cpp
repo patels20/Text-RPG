@@ -2,17 +2,21 @@
 #include "player.h"
 #include "monster.h"
 
-
+#include <iostream>
+#include <windows.h>
+#include <MMSystem.h>
 using namespace std;
 
 
 int main()
 {
+
     string gameStarter = "";
     char game = 'S';
     cout <<"Enter you're name : " << endl;
     cin >> gameStarter;
     system("cls");
+    a:
     cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
     cout <<"\t\t\t\t\t\tWelcome to the Adventures of " << gameStarter << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
@@ -53,21 +57,18 @@ int main()
             cout << "   \tAttack:      30"<<endl;
             cout << "       \tDefense:     20"<<endl;
             cout << "    \tCash:        300"<<endl;
-            cout << "    \tExperience:  0   "<<endl;
             cout << "\n\nArcher: Weapon: Bow and Arrow\n";
             cout << "    \tHealth:      100"<<endl;
             cout << "       \tEnergy:      100"<<endl;
             cout << "   \tAttack:      40"<<endl;
             cout << "       \tDefense:     10"<<endl;
             cout << "    \tCash:        100"<<endl;
-            cout << "    \tExperience:  0   "<<endl;
             cout << "\n\nWarrior:Weapon: Shield and Sword\n";
             cout << "    \tHealth:      100"<<endl;
             cout << "       \tEnergy:      100"<<endl;
             cout << "   \tAttack:      25"<<endl;
             cout << "       \tDefense:     25"<<endl;
             cout << "    \tCash:        250"<<endl;
-            cout << "    \tExperience:  0   "<<endl;
             Sleep(1000);
             cout <<"\nDecide :"<<endl;
             Sleep(900);
@@ -102,6 +103,10 @@ int main()
                     {
                         level4(player1,monster("Police Officer",100,50,40));
                     }
+                    if(player1.progression = 5)
+                    {
+                        level5(player1,monster("Thanos",1000,1000,1000));
+                    }
                     break;
                     }
                 case 2:
@@ -122,6 +127,10 @@ int main()
                      if(player1.progression = 4)
                     {
                         level4(player1,monster("Police Officer",100,40,40));
+                    }
+                    if(player1.progression = 5)
+                    {
+                        level5(player1,monster("Thanos",1000,1000,1000));
                     }
                     break;
                     }
@@ -145,8 +154,39 @@ int main()
                     {
                         level4(player1,monster("Police Officer",100,40,40));
                     }
+                    if(player1.progression = 5)
+                    {
+                        level5(player1,monster("Thanos",1000,1000,1000));
+                    }
                     break;
                     }
+                case 6666:
+                    {
+                        player player1("Warrior",100,100,10000,25,0,0);
+
+                    if(player1.progression = 1)
+                    {
+                        level1(player1,monster("Shia",100,20,12));
+                    }
+                    if(player1.progression = 2)
+                    {
+                        level2(player1,monster("Homeless Guy",100,15,20));
+                    }
+                     if(player1.progression = 3)
+                    {
+                        level3(player1,monster("Clerk",100,30,5));
+                    }
+                     if(player1.progression = 4)
+                    {
+                        level4(player1,monster("Police Officer",100,40,40));
+                    }
+                    if(player1.progression = 5)
+                    {
+                        level5(player1,monster("Thanos",1000,1000,1000));
+                    }
+                    break;
+                    }
+
                 default:
                     cout << " ok" << endl;
 
@@ -154,5 +194,6 @@ int main()
             }
         break;
     }
+    goto a;
     return 0;
 }
