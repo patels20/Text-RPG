@@ -22,12 +22,13 @@ class player
         int experience;
         int cash;
         int curLevel;
+        int progression;
 
         player()
         {
             //Default Constructor;
         }
-       player(string n, int h,int en, int a, int d, int e,int c)
+       player(string n, int h,int en, int a, int d, int e,int c, int p)
        {
            //Primary constructor
            setName(n);
@@ -37,8 +38,18 @@ class player
            setCash(c);
            setEnergy(en);
            setDefense(d);
+           setProg(p);
+
         }
       // ~player(); // destructor
+      int setProg(int pro)
+      {
+          progression = pro;
+      }
+      int getProg(int p)
+      {
+          return progression;
+      }
       int setDefense(int def)
       {
           defense = def;
