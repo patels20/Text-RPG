@@ -74,5 +74,4 @@ class monster
             return level;
         }
 
-
 };
