@@ -13,17 +13,18 @@ class player
     public:
         string name;
         int health;
+        int energy;
         int attack;
+        int defense;
         int experience;
         int cash;
-        int energy;
         int curLevel;
 
         player()
         {
             //Default Constructor;
         }
-       player(string n, int h,int a, int e, int c, int en)
+       player(string n, int h,int a, int e, int c, int en,int d)
        {
            //Primary constructor
            setName(n);
@@ -32,58 +33,67 @@ class player
            setExperience(e);
            setCash(c);
            setEnergy(en);
+           setDefense(d);
         }
       // ~player(); // destructor
+      int setDefense(int def)
+      {
+          defense = def;
+      }
       int setLevel(int curLvl)
       {
           curLevel = curLvl;
       }
-        string setName(string nameVar)
-        {
-            name = nameVar;
-        }
-        int setHealth(int healthVar)
-        {
-            health = healthVar;
-        }
-        int setAttack(int attVar)
-        {
-            attack = attVar;
-        }
-        int setExperience(int exp)
-        {
-            experience = exp;
-        }
-        int setEnergy(int egy)
-        {
-            energy = egy;
-        }
-        int setCash(int wallet)
-        {
-            cash = wallet;
-        }
-        void getName()
-        {
-            cout << name << endl;
-        }
-        void getHealth()
-        {
-            cout << health << endl;
-        }
-        void getAttack()
-        {
-            cout << attack << endl;
-        }
-        void getExp()
-        {
-            cout << experience << endl;
-        }
-        void getCash()
-        {
-            cout << cash << endl;
-        }
-        void getEnergy()
-        {
-            cout << energy << endl;
-        }
+      int getLevel( )
+      {
+          return curLevel;
+      }
+      string setName(string nameVar)
+      {
+          name = nameVar;
+      }
+      int setHealth(int healthVar)
+      {
+          health = healthVar;
+      }
+      int setAttack(int attVar)
+      {
+        attack = attVar;
+      }
+    int setExperience(int exp)
+    {
+        experience = exp;
+    }
+    int setEnergy(int egy)
+    {
+        energy = egy;
+    }
+    int setCash(int wallet)
+    {
+        cash = wallet;
+    }
+    string getName()
+    {
+        return name;
+    }
+    int getHealth()
+    {
+        return health;
+    }
+    int getAttack()
+    {
+        return attack;
+    }
+    int getExp()
+    {
+        return experience;
+    }
+    int getCash()
+    {
+        return cash;
+    }
+    int getEnergy()
+    {
+        return energy;
+    }
 };
