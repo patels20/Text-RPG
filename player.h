@@ -20,7 +20,6 @@ class player
         int energy;
         int attack;
         int defense;
-        int experience;
         int cash;
         int progression;
 
@@ -44,7 +43,7 @@ class player
       {
           progression = pro;
       }
-      int getProg(int p)
+      int getProg()
       {
           return progression;
       }
