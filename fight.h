@@ -17,9 +17,11 @@ void fight(player player1, monster mon)
     {
         do
             {
+
                 int random = rand() % 100;
                 int random2 = rand() % 100;
-
+                if(player1.getProg() <= 2 && player1.getProg() >=1)
+                {
                 cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
                 cout << "\t\t\t"<<player1.getName()<<" Status \t\t\t\t "<<mon.getName()<<" Status" << endl;
                 cout << "\t\t\tHealth :" << player1.getHealth() << "\t\t\t\t Health : " << mon.getHealth() << endl;
@@ -28,9 +30,25 @@ void fight(player player1, monster mon)
                 cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
                 cout << "\t\t\t\t\t\t\tYou're Turn" << endl;
                 cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
-                cout << "\t\t\t\t\t1. Attack \t\t2.Dodge\t\t3.Heal\t\t4.View Items"<< endl;
+                cout << "\t\t\t\t\t1. Attack \t\t2.Dodge\t\t3.Heal"<< endl;
                 cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
                 cin >> userfightInt;
+                }
+                else
+                {
+                    cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
+                    cout << "\t\t\t"<<player1.getName()<<" Status \t\t\t\t "<<mon.getName()<<" Status" << endl;
+                    cout << "\t\t\tHealth :" << player1.getHealth() << "\t\t\t\t Health : " << mon.getHealth() << endl;
+                    cout << "\t\t\tAttack :" << player1.getAttack() << "\t\t\t\t Attack : " << mon.getAttack() << endl;
+                    cout << "\t\t\tDefense :" << player1.getDefense() << "\t\t\t\t Defense : " << mon.getDefense() << endl;
+                    cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
+                    cout << "\t\t\t\t\t\t\tYou're Turn" << endl;
+                    cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
+                    cout << "\t\t\t\t\t1. Attack \t\t2.Dodge\t\t3.Heal\t\t4.View Items"<< endl;
+                    cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
+                    cin >> userfightInt;
+
+                }
                 system("cls");
 
                     switch(userfightInt)
@@ -128,6 +146,12 @@ void fight(player player1, monster mon)
     while(!won);
     if(player1.health > mon.health)
     {
-        cout << "Congratulation you won!" << endl;
+        system("cls");
+        cout <<"**************************************************************************************************************************\n" << endl;
+         cout <<"\t\t\t\t\t\t  Congratulation you've won!" << endl;
+         cout <<"\t\t\t\t\t\t     You've beaten " << mon.getName() << endl;
+         cout <<"\t\t\t\t\t\tYou've Advanced to the next level \n" << endl;
+         cout <<"**************************************************************************************************************************\n" << endl;
+        system("pause");
     }
 }
