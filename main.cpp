@@ -22,9 +22,9 @@ int main()
 
 	switch(userInput){
         case 1:
-            player("God",100,20,0,0,100);
-            monster("Shia",100,20,1);
-            level1(player("God",100,20,0,0,100),monster("Shia",100,20,1));
+            //health,energy,attack,defense -Player
+            //health,attack,defense - Monster
+            level1(player("God",100,100,30,20,0,0,0),monster("Shia",100,20,30,0);
             break;
       /*  case 2:
             cout << "Nothing" << endl;
