@@ -26,5 +26,4 @@ class level{
             numMonsters = most;
         }
 
-
 };
