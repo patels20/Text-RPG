@@ -21,13 +21,12 @@ class monster
         {
             //Default Constructor
         }
-        monster(string n, int h, int a, int l,int d)
+        monster(string n, int h, int a, int d)
         {
             //Primary Constructor
             setName(n);
             setHealth(h);
             setAttack(a);
-            setLevel(l);
             setDefense(d);
         }
         ~monster()
@@ -65,6 +64,10 @@ class monster
         int getAttack()
         {
             return attack;
+        }
+        int getDefense()
+        {
+            return defense;
         }
         int getLevel()
         {
