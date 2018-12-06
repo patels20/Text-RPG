@@ -9,12 +9,12 @@ using namespace std;
 
 class monster
 {
-    private:
+    public:
         string name;
         int health;
         int attack;
         int level;
-    public:
+
         monster()
         {
             //Default Constructor
