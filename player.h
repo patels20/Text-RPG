@@ -1,6 +1,9 @@
-#include <string>
+#include <stdlib.h>
+#include <time.h>
 #include <iostream>
-#include <random>
+#include <fstream>
+#include <string>
+#include <windows.h>
 #pragma once
 
 #define INVENT_SIZE 10
@@ -24,7 +27,7 @@ class player
         {
             //Default Constructor;
         }
-       player(string n, int h,int a, int e, int c, int en,int d)
+       player(string n, int h,int en, int a, int d, int e,int c)
        {
            //Primary constructor
            setName(n);
@@ -39,6 +42,10 @@ class player
       int setDefense(int def)
       {
           defense = def;
+      }
+      int getDefense()
+      {
+          return defense;
       }
       int setLevel(int curLvl)
       {
