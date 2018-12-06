@@ -24,7 +24,7 @@ int main()
         case 1:
             //health,energy,attack,defense -Player
             //health,attack,defense - Monster
-            level1(player("God",100,100,30,20,0,0,0),monster("Shia",100,20,30,0);
+            level1(player("God",100,100,30,20,0,0),monster("Shia",100,20,12));
             break;
       /*  case 2:
             cout << "Nothing" << endl;
