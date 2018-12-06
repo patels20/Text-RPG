@@ -43,5 +43,4 @@ void level2(player player1, monster mon1, monster mon2)
 {
 
 
-
 }
