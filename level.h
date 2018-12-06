@@ -12,7 +12,8 @@ class level{
         string endDestination;
         int numMonsters;
     public:
-        int getLevel(int lvl)
+
+        int setLevel(int lvl)
         {
             level = lvl;
         }
