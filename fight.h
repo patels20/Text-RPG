@@ -35,12 +35,14 @@ void fight(player player1, monster mon)
                     switch(userfightInt)
                     {
                         case 1:
-                            if(random <=50)
+                            if(random <=(player1.getAttack()*2)-20)
                             {
                             system("cls");
                             cout << "You've landed a successful attack" << endl;
                             cout << "Damage Dealt : " << playerAttack1 << endl;
                             mon.setHealth(mon.getHealth()-playerAttack1);
+                            system("pause");
+                            system("cls");
                                 if(random2 <= 90)
                                 {
                                     cout <<mon.getName() << " has successfully landed a hit." << endl;
@@ -51,12 +53,16 @@ void fight(player player1, monster mon)
                                 {
                                     cout << "Monster has missed an attack" << endl;
                                 }
+                            system("pause");
+                            system("cls");
                             }
-                            else if(random >50)
+                            else
                             {
                                 system("cls");
                                 cout << "You've missed the attack" << endl;
-                                 if(random2 <= 25)
+                                system("pause");
+                                system("cls");
+                                 if(random2 <= 90)
                                 {
                                     cout <<mon.getName() << " has successfully landed a hit." << endl;
                                     cout << "You've taken " << monsterAttack1 << endl;
@@ -66,40 +72,46 @@ void fight(player player1, monster mon)
                                 {
                                     cout << "Monster has missed an attack" << endl;
                                 }
+                                system("pause");
+                                system("cls");
                             }
-
-
-                       /* if(random2 <= 90)
-                        {
-                            system("cls");
-                            player1.setHealth(monsterAttack1);
-                        }*/
                             break;
                         case 2:
                             cout << "You've Dodge the attack" << endl;
+                            system("pause");
+                            system("cls");
                             if(random2 <= 101)
                             {
                                 cout << "Monster has missed his/her attack" << endl;
+                            system("pause");
+                            system("cls");
                             }
                             break;
                         case 3:
-                            if((player1.health + 10) >= 100)
+                            if(player1.health == 100)
                             {
-                                cout << "You've regained some health " << endl;
+                                cout << "Healing won't do anything when you're at full!" << endl;
+                            }
+                            else if((player1.health + 10) > 100)
+                            {
+                                cout << "You've healed to max!" << endl;
                                 player1.setHealth(100);
                             }
                             else
                             {
-                                cout << "You've regained some health " << endl;
+                                cout << "You've regained " << 10 << " health!" << endl;
                                 player1.setHealth(player1.health+10);
+                                cout << "Current Health :" << player1.getHealth() << endl;
                             }
+                            system("pause");
+                            system("cls");
                             break;
                         default:
                             cout << "Invalid Fight Option" << endl;
+                            system("pause");
+                            system("cls");
                             break;
                     }
-
-
             }
 
             while(!(mon.health <= 0 || player1.health <= 0));   // 33 <= 0 or 44 <= 0
