@@ -1,10 +1,7 @@
 #include "level.cpp"
 #include "player.h"
 #include "monster.h"
-#include "level.h"
-#include <iostream>
-#include <string>
-#include <random>
+
 
 using namespace std;
 
@@ -53,23 +50,23 @@ int main()
             cout << "\n\nWizard: Weapon: Staff" << endl;
             cout << "    \tHealth:      100"<<endl;
             cout << "       \tEnergy:      100"<<endl;
-            cout << "   \tAttack:      1000"<<endl;
-            cout << "       \tDefense:     10"<<endl;
-            cout << "    \tCash:        0"<<endl;
+            cout << "   \tAttack:      30"<<endl;
+            cout << "       \tDefense:     20"<<endl;
+            cout << "    \tCash:        300"<<endl;
             cout << "    \tExperience:  0   "<<endl;
             cout << "\n\nArcher: Weapon: Bow and Arrow\n";
             cout << "    \tHealth:      100"<<endl;
             cout << "       \tEnergy:      100"<<endl;
-            cout << "   \tAttack:      1000"<<endl;
+            cout << "   \tAttack:      40"<<endl;
             cout << "       \tDefense:     10"<<endl;
-            cout << "    \tCash:        0"<<endl;
+            cout << "    \tCash:        100"<<endl;
             cout << "    \tExperience:  0   "<<endl;
             cout << "\n\nWarrior:Weapon: Shield and Sword\n";
             cout << "    \tHealth:      100"<<endl;
             cout << "       \tEnergy:      100"<<endl;
-            cout << "   \tAttack:      1000"<<endl;
-            cout << "       \tDefense:     10"<<endl;
-            cout << "    \tCash:        0"<<endl;
+            cout << "   \tAttack:      25"<<endl;
+            cout << "       \tDefense:     25"<<endl;
+            cout << "    \tCash:        250"<<endl;
             cout << "    \tExperience:  0   "<<endl;
             Sleep(1000);
             cout <<"\nDecide :"<<endl;
@@ -86,51 +83,51 @@ int main()
             {
                 case 1:
                     {
-                        player player1("God",100,100,1000,10,0,0);
+                        player player1("Wizard",100,100,30,20,0,0);
                     //health,energy,attack,defense -Player
                     //health,attack,defense - Monster
                     if(player1.progression = 1)
                     {
-                        level1(player1,monster("Shia",100,20,12));
+                        level1(player1,monster("Shia",100,35,12));
                     }
                     if(player1.progression = 2)
                     {
-                        level2(player1,monster("Shia",100,20,12));
+                        level2(player1,monster("Homeless Guy",100,25,20));
                     }
                      if(player1.progression = 3)
                     {
-                        level3(player1,monster("Shia",100,20,12));
+                        level3(player1,monster("Clerk",100,30,5));
                     }
                      if(player1.progression = 4)
                     {
-                        level4(player1,monster("Shia",100,20,12));
+                        level4(player1,monster("Police Officer",100,50,40));
                     }
                     break;
                     }
                 case 2:
                     {
-                    player player1("God",100,100,1000,10,0,0);
+                    player player1("Archer",100,100,40,10,0,0);
                     if(player1.progression = 1)
                     {
                         level1(player1,monster("Shia",100,20,12));
                     }
                     if(player1.progression = 2)
                     {
-                        level2(player1,monster("Shia",100,20,12));
+                        level2(player1,monster("Homeless Guy",100,15,20));
                     }
                      if(player1.progression = 3)
                     {
-                        level3(player1,monster("Shia",100,20,12));
+                        level3(player1,monster("Clerk",100,30,5));
                     }
                      if(player1.progression = 4)
                     {
-                        level4(player1,monster("Shia",100,20,12));
+                        level4(player1,monster("Police Officer",100,40,40));
                     }
                     break;
                     }
                 case 3:
                     {
-                        player player1("God",100,100,1000,10,0,0);
+                        player player1("Warrior",100,100,25,25,0,0);
 
                     if(player1.progression = 1)
                     {
@@ -138,15 +135,15 @@ int main()
                     }
                     if(player1.progression = 2)
                     {
-                        level2(player1,monster("Shia",100,20,12));
+                        level2(player1,monster("Homeless Guy",100,15,20));
                     }
                      if(player1.progression = 3)
                     {
-                        level3(player1,monster("Shia",100,20,12));
+                        level3(player1,monster("Clerk",100,30,5));
                     }
                      if(player1.progression = 4)
                     {
-                        level4(player1,monster("Shia",100,20,12));
+                        level4(player1,monster("Police Officer",100,40,40));
                     }
                     break;
                     }
