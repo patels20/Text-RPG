@@ -1,14 +1,8 @@
-#include "level.h"
 #include "player.h"
 #include "monster.h"
 #include "fight.h"
-#include <stdlib.h>
-#include <random>
-#include <ctime>
-#include <stdlib.h>
-using namespace std;
 
-//THIS IS A TEST
+using namespace std;
 
 void level1(player player1, monster mon)
 {
@@ -121,8 +115,6 @@ char userInt;
             break;
     }
 }
-
-
 
 void level3(player player1, monster mon)
 {
