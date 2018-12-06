@@ -13,23 +13,30 @@ class monster
         string name;
         int health;
         int attack;
+        int defense;
         int level;
+
 
         monster()
         {
             //Default Constructor
         }
-        monster(string n, int h, int a, int l)
+        monster(string n, int h, int a, int l,int d)
         {
             //Primary Constructor
             setName(n);
             setHealth(h);
             setAttack(a);
             setLevel(l);
+            setDefense(d);
         }
         ~monster()
         {
             //Default Destructor
+        }
+        int setDefense(int def)
+        {
+            defense = def;
         }
         string setName(string na)
         {
@@ -47,21 +54,21 @@ class monster
         {
             level =levl;
         }
-        void getName()
+        string getName()
         {
-            cout << name << endl;
+            return name;
         }
-        void getHealth()
+        int getHealth()
         {
-            cout << health << endl;
+            return health;
         }
-        void getAttack()
+        int getAttack()
         {
-            cout << attack << endl;
+            return attack;
         }
-        void getLevel()
+        int getLevel()
         {
-            cout << level << endl;
+            return level;
         }
 
 
