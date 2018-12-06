@@ -1,8 +1,5 @@
-#include <iostream>
-#include <string>
-#include <random>
 #include "player.h"
-#include "level.h"
+
 #pragma once
 
 using namespace std;
