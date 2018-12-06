@@ -17,6 +17,7 @@ class player
         int experience;
         int cash;
         int energy;
+        int curLevel;
 
         player()
         {
@@ -32,7 +33,11 @@ class player
            setCash(c);
            setEnergy(en);
         }
-       ~player(); // destructor
+      // ~player(); // destructor
+      int setLevel(int curLvl)
+      {
+          curLevel = curLvl;
+      }
         string setName(string nameVar)
         {
             name = nameVar;
