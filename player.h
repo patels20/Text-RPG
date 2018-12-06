@@ -1,18 +1,19 @@
-#include <stdlib.h>
-#include <time.h>
 #include <iostream>
-#include <fstream>
 #include <string>
+#include <fstream>
+#include <ctime>
+#include <stdlib.h>
+#include <random>
 #include <windows.h>
+
 #pragma once
 
-#define INVENT_SIZE 10
+#define INVENT_SIZE 5
 
 using namespace std;
 
 class player
 {
-
     public:
         string name;
         int health;
@@ -21,28 +22,25 @@ class player
         int defense;
         int experience;
         int cash;
-        int curLevel;
         int progression;
 
         player()
         {
             //Default Constructor;
         }
-       player(string n, int h,int en, int a, int d, int e,int c, int p)
+       player(string n, int h,int en, int a, int d, int e,int c)
        {
            //Primary constructor
            setName(n);
            setHealth(h);
            setAttack(a);
-           setExperience(e);
            setCash(c);
-           setEnergy(en);
            setDefense(d);
-           setProg(p);
+           setProg(1);
 
         }
       // ~player(); // destructor
-      int setProg(int pro)
+      void setProg(int pro)
       {
           progression = pro;
       }
@@ -50,7 +48,7 @@ class player
       {
           return progression;
       }
-      int setDefense(int def)
+      void setDefense(int def)
       {
           defense = def;
       }
@@ -58,35 +56,19 @@ class player
       {
           return defense;
       }
-      int setLevel(int curLvl)
-      {
-          curLevel = curLvl;
-      }
-      int getLevel( )
-      {
-          return curLevel;
-      }
-      string setName(string nameVar)
+      void setName(string nameVar)
       {
           name = nameVar;
       }
-      int setHealth(int healthVar)
+      void setHealth(int healthVar)
       {
           health = healthVar;
       }
-      int setAttack(int attVar)
+      void setAttack(int attVar)
       {
         attack = attVar;
       }
-    int setExperience(int exp)
-    {
-        experience = exp;
-    }
-    int setEnergy(int egy)
-    {
-        energy = egy;
-    }
-    int setCash(int wallet)
+    void setCash(int wallet)
     {
         cash = wallet;
     }
@@ -110,8 +92,5 @@ class player
     {
         return cash;
     }
-    int getEnergy()
-    {
-        return energy;
-    }
+
 };
