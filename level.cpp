@@ -238,3 +238,36 @@ void level4(player player1, monster mon){
 
 
 }
+
+
+void level5(player player1, monster mon)
+{
+    char userInt;
+    system("cls");
+    cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
+    cout << "\t\t\t\t\t\tWelcome To Level 5" << endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
+    Sleep(1000);
+    cout << "\t\t\tYou have now made it all the to your home. "<< endl;
+    Sleep(2000);
+    cout << "\t\tIt has been a long and bloody day, all you want to do is go to bed." << endl;
+    Sleep(2000);
+    cout << "\t\t\tAs usual you can't catch a break because you have bad juju. "<< endl;
+    Sleep(2000);
+    cout << "\t\t\t Upon entering your house you see Thanos, the mad Titan, and you both lock eyes." << endl;
+    Sleep(2000);
+	cout << "   For some reason he chooses not to kill you instantly so he goes easy on you. Good luck fighting Thanos, whose biceps are bigger than your waist.\n\n " << endl;
+	Sleep(2000);
+    cout << "\t\t\t\t\t\t You have 0 options. "<< endl;
+    Sleep(1000);
+    cout <<"\t\tYou must fight the mad Titan? "<< endl;
+    Sleep(1000);
+    cout << "\t\t\t\t\t\t\tor"<< endl;
+    Sleep(1100);
+    Sleep(1500);
+    cout <<"F : Fight"<< endl;
+    Sleep(900);
+    cout <<"Decide : You do not have a choice just type in F or f. ";
+    cin >> userInt;
+
+}
