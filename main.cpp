@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <windows.h>
-#include <MMSystem.h>
+
 using namespace std;
 
 
@@ -20,6 +20,7 @@ int main()
     cout <<"Enter your first name : " << endl;
     cin >> gameStarter;
     system("cls");
+    a:
     cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
     cout <<"\t\t\t\t\t\tWelcome to the Adventures of " << gameStarter << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
@@ -56,8 +57,10 @@ int main()
         break;
         case 'S':
         case 's':
+            {
             system("cls");
             int userInput = 0;
+            b:
             cout << "Please pick one of the characters below:";
             cout << "\n\nWizard: Weapon: Staff" << endl;
             cout << "    \tHealth:      100"<<endl;
@@ -81,7 +84,6 @@ int main()
             cout <<"3: Warrior" << endl;
             Sleep(900);
             cin >> userInput;
-            b:
             switch(userInput)
             {
                 case 1:
@@ -148,7 +150,6 @@ int main()
                     Sleep(900);
                     system("cls");
                     {
-                      //  player player1("Warrior",100,30,10,0);
 
                     if(player3.progression = 1)
                     {
@@ -200,16 +201,29 @@ int main()
                     }
                     break;
                     }
-
                 default:
                     {
-                    cout << " Invalid Option" << endl;
-                    system("cls");
+                    cout <<"Invalid Character Option "<< endl;
                     system("pause");
+                    system("cls");
                     goto b;
                     break;
                     }
+                }
+            break;
             }
+        default:
+            {
+
+                system("cls");
+                cout <<"Invalid Option select proper option" << endl;
+                system("pause");
+                system("cls");
+                goto a;
+                break;
+            }
+
     }
     return 0;
 }
+
