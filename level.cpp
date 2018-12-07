@@ -275,28 +275,6 @@ void level5(player player1, monster mon)
     cout <<"Decide : You do not have a choice just type in F or f. ";
     cin >> userInt;
 
-    switch(userInt)
-    {
-        case 'F':
-        case 'f':
-            if(player1.redbull == 1)
-            {
-                cout << "You retrieve the secret item and it reveals itself as" << endl;
-                cout << "Red bull gave you wings" << endl;
-            }
-            else
-            {
-                cout <<"Thanos's gauntlet overpowers you and has snapped life into nothing "<<endl;
-            }
-    }
-
-
-
-
-
-
-
-
 
 }
 
