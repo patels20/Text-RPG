@@ -8,8 +8,6 @@
 
 #pragma once
 
-#define INVENT_SIZE 5
-
 using namespace std;
 
 class player
@@ -19,28 +17,24 @@ class player
         int health;
         int attack;
         int defense;
-        int cash;
         int progression;
-		int gas;
-		int healthpack;
 		int redbull;
-
         player()
         {
             //Default Constructor;
         }
-       player(string n, int h, int a, int d,int c)
+       player(string n, int h,int a, int d)
        {
            //Primary constructor
            setName(n);
            setHealth(h);
            setAttack(a);
-           setCash(c);
            setDefense(d);
            setProg(1);
 
         }
       // ~player(); // destructor
+
 	void setProg(int pro)
 	{
 		progression = pro;
@@ -69,10 +63,6 @@ class player
 	{
 		attack = attVar;
 	}
-    void setCash(int wallet)
-    {
-        cash = wallet;
-    }
     string getName()
     {
         return name;
@@ -84,10 +74,6 @@ class player
     int getAttack()
     {
         return attack;
-    }
-    int getCash()
-    {
-        return cash;
     }
 
 };
