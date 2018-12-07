@@ -12,7 +12,7 @@ void shop(player player1)
 		cout << "\t\t\t\t\t\t\tShop" << endl;
 		cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
 		cout << "Availible Items:" << endl;
-		cout << "(G) Gas: 10BTC \t (H) Health: 10BTC \t (R) RED BULL: 1,000 BTC" << endl;
+		cout << "(G) Gas: 10 BTC \t (H) Health: 10 BTC \t (R) RED BULL: 1,000 BTC" << endl;
 
 		cin << userBuy;
 		system("cls");
