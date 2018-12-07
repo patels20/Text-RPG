@@ -29,5 +29,4 @@ class archer:public player
         }
 
 
-
 };
