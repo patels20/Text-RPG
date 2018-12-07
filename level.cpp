@@ -6,12 +6,12 @@ using namespace std;
 
 void level1(player player1, monster mon)
 {
-    char userInt;
+    char userInt; // this is going to take in the user input for the action they choose to do based on the scenario
     system("cls");
     cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
     cout << "\t\t\t\t\t\tWelcome To Level 1" << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
-    Sleep(500);
+    Sleep(500); // this is just a delay 
     cout << "You're walking in the woods.  There's no one around and your phone is dead.  Out of the corner of your eye, you spot him"<< endl;
     Sleep(500);
     cout << "\t\t\t\t\t\t\tIt's SHIA LEBEOUF!" << endl;
@@ -31,13 +31,13 @@ void level1(player player1, monster mon)
     cout <<"\nDecide : " << endl;
     cin >> userInt;
     system("cls");
-
-    switch(userInt)
+////////////// the above couts were just outputs to the screen
+    switch(userInt) // switch for the user input for scenario 1 
     {
 
             case 'F':
             case 'f':
-                fight(player1,mon);
+                fight(player1,mon); // this starts the fight between the player and the monster(in this case Shia)
             break;
             case 'R':
             case 'r':
@@ -61,11 +61,11 @@ void level1(player player1, monster mon)
             break;
     }
 }
-void level2(player player1, monster mon)
+void level2(player player1, monster mon) // after user passes through level one if they pass they move onto level 2
 
 {
 
-char userInt;
+char userInt;  // this is going to take in the user input for the action they choose to do based on the scenario
     system("cls");
     cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
     cout << "\t\t\t\t\t\tWelcome To Level 2" << endl;
@@ -94,11 +94,12 @@ char userInt;
     cout <<"Decide : " ;
     cin >> userInt;
     system("cls");
-    switch(userInt)
+	// the output of couts above is just giving the story to the user
+    switch(userInt) // switch for the user input for scenario 1 
     {
         case 'F':
         case 'f':
-            fight(player1,mon);
+            fight(player1,mon); // starts a fight with the homless person and the player 
 
         break;
         case 'M':
@@ -122,7 +123,7 @@ char userInt;
     }
 }
 
-void level3(player player1, monster mon)
+void level3(player player1, monster mon) // if you pass level 2 you end up coming here to level 3 
 {
     char userInt;
     system("cls");
@@ -155,13 +156,14 @@ void level3(player player1, monster mon)
     cout <<"Decide : ";
     cin >> userInt;
     system("cls");
+	// above is the cout instruction with formatting for the small window 
      switch(userInt)
     {
         case 'F':
         case 'f':
             fight(player1,mon);
             cout << "You've got a secret item!" << endl;
-            player1.redbull = 1;
+            player1.redbull = 1; 
 
         break;
         case 'P':
