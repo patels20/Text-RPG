@@ -10,10 +10,14 @@ using namespace std;
 
 int main()
 {
+    wizard player1("Wizard",100,25,15);
+    archer player2("Archer",100,35,5);
+    warrior player3("Warrior",100,30,10);
+    int cash =0;
 
     string gameStarter = "";
     char game = 'S';
-    cout <<"Enter your name : " << endl;
+    cout <<"Enter your first name : " << endl;
     cin >> gameStarter;
     system("cls");
     cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
@@ -75,7 +79,7 @@ int main()
             cout << "2: Archer"<< endl;
             Sleep(500);
             cout <<"3: Warrior" << endl;
-            Sleep(500);
+            Sleep(900);
             cin >> userInput;
             b:
             switch(userInput)
@@ -86,9 +90,9 @@ int main()
                     system("cls");
 
                     {
-                        player player1("Wizard",100,25,15,0);
                     //health,energy,attack,defense -Player
                     //health,attack,defense - Monster
+                   // player player1("Wizard",100,25,15,0);
                     if(player1.progression = 1)
                     {
                         level1(player1,monster("Shia",100,25,10));
@@ -100,7 +104,7 @@ int main()
                      if(player1.progression = 3)
                     {
 
-                        level3(player("Wizard",100,25,15,30),monster("Clerk",100,30,15));
+                        level3(player1,monster("Clerk",100,30,15));
                     }
                      if(player1.progression = 4)
                     {
@@ -117,26 +121,25 @@ int main()
                     Sleep(900);
                     system("cls");
                     {
-                    player player1("Archer",100,35,5,0);
-                    if(player1.progression = 1)
+                    if(player2.progression = 1)
                     {
-                        level1(player1,monster("Shia",100,25,10));
+                        level1(player2,monster("Shia",100,25,10));
                     }
-                    if(player1.progression = 2)
+                    if(player2.progression = 2)
                     {
-                        level2(player1,monster("Homeless Guy",100,30,10));
+                        level2(player2,monster("Homeless Guy",100,30,10));
                     }
-                     if(player1.progression = 3)
+                     if(player2.progression = 3)
                     {
-                        level3(player("Archer",100,35,5,30),monster("Clerk",100,30,15));
+                        level3(player2,monster("Clerk",100,30,15));
                     }
-                     if(player1.progression = 4)
+                     if(player2.progression = 4)
                     {
-                        level4(player1,monster("Police Officer",100,35,15));
+                        level4(player2,monster("Police Officer",100,35,15));
                     }
-                    if(player1.progression = 5)
+                    if(player2.progression = 5)
                     {
-                        level5(player1,monster("Thanos",1000,1000,1000));
+                        level5(player2,monster("Thanos",1000,1000,1000));
                     }
                     break;
                     }
@@ -145,27 +148,27 @@ int main()
                     Sleep(900);
                     system("cls");
                     {
-                        player player1("Warrior",100,30,10,0);
+                      //  player player1("Warrior",100,30,10,0);
 
-                    if(player1.progression = 1)
+                    if(player3.progression = 1)
                     {
-                        level1(player1,monster("Shia",100,25,10));
+                        level1(player3,monster("Shia",100,25,10));
                     }
-                    if(player1.progression = 2)
+                    if(player3.progression = 2)
                     {
-                        level2(player1,monster("Homeless Guy",100,30,10));
+                        level2(player3,monster("Homeless Guy",100,30,10));
                     }
-                     if(player1.progression = 3)
+                     if(player3.progression = 3)
                     {
-                        level3(player("Wizard",100,30,10,30),monster("Clerk",100,30,15));
+                        level3(player3,monster("Clerk",100,30,15));
                     }
-                     if(player1.progression = 4)
+                     if(player3.progression = 4)
                     {
-                        level4(player1,monster("Police Officer",100,35,15));
+                        level4(player3,monster("Police Officer",100,35,15));
                     }
-                    if(player1.progression = 5)
+                    if(player3.progression = 5)
                     {
-                        level5(player1,monster("Thanos",1000,1000,1000));
+                        level5(player3,monster("Thanos",1000,1000,1000));
                     }
                     break;
                     }
@@ -174,26 +177,26 @@ int main()
                     Sleep(900);
                     system("cls");
                     {
-                        player player1("SATAN",100,10000,25,10000);
+                        player player4("SATAN",100,10000,25);
                     if(player1.progression = 1)
                     {
-                        level1(player1,monster("Shia",100,20,12));
+                        level1(player4,monster("Shia",100,20,12));
                     }
                     if(player1.progression = 2)
                     {
-                        level2(player1,monster("Homeless Guy",100,15,20));
+                        level2(player4,monster("Homeless Guy",100,15,20));
                     }
                      if(player1.progression = 3)
                     {
-                        level3(player("Satan",1000,10000,25,30),monster("Clerk",100,30,5));
+                        level3(player4,monster("Clerk",100,30,5));
                     }
                      if(player1.progression = 4)
                     {
-                        level4(player1,monster("Police Officer",100,40,40));
+                        level4(player4,monster("Police Officer",100,40,40));
                     }
                     if(player1.progression = 5)
                     {
-                        level5(player1,monster("Thanos",1000,1000,1000));
+                        level5(player4,monster("Thanos",1000,1000,1000));
                     }
                     break;
                     }
