@@ -147,7 +147,7 @@ void level3(player player1, monster mon)
     cout << "\t\t\t\t\t\t\tor"<< endl;
     Sleep(500);
     cout <<"\t\t\t\t\t     You can pay for the gas "<< endl;
-    Sleep(500);
+   Sleep(500);
     cout <<"P : Pay for gas"<<endl;
     Sleep(500);
     cout <<"F : Fight & Steal"<< endl;
@@ -161,6 +161,7 @@ void level3(player player1, monster mon)
         case 'f':
             fight(player1,mon);
             cout << "You've got a secret item!" << endl;
+            player1.redbull = 1;
 
         break;
         case 'P':
@@ -273,6 +274,28 @@ void level5(player player1, monster mon)
     Sleep(500);
     cout <<"Decide : You do not have a choice just type in F or f. ";
     cin >> userInt;
+
+    switch(userInt)
+    {
+        case 'F':
+        case 'f':
+            if(player1.redbull == 1)
+            {
+                cout << "You retrieve the secret item and it reveals itself as" << endl;
+                cout << "Red bull gave you wings" << endl;
+            }
+            else
+            {
+                cout <<"Thanos's gauntlet overpowers you and has snapped life into nothing "<<endl;
+            }
+    }
+
+
+
+
+
+
+
 
 
 }
