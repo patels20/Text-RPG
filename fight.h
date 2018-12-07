@@ -21,6 +21,7 @@ void fight(player player1, monster mon)
         do
             {
 
+
                 int random = rand() % 100;
                 int random2 = rand() % 100;
                 cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
@@ -124,14 +125,21 @@ void fight(player player1, monster mon)
                             break;
                     }
             }
-            while(!(mon.health <= 0 || player1.health <= 0));   // 33 <= 0 or 44 <= 0
+            while((mon.health >= 0) && (player1.health >= 0));   // 33 <= 0 or 44 <= 0
             if(mon.health <= 0)
             {
                 won = true;
                 player1.progression+=1;
             }
+            else
+            {
+                cout << " You've Failed " << endl;
+                system("cls");
+                system("pause");
+                exit(1);
+            }
     }
-    while(!won);
+    while(!(won) || !(player1.health <= 0));
     if(player1.health > mon.health)
     {
         system("cls");
