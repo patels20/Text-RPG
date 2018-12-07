@@ -29,7 +29,7 @@ class player
         {
             //Default Constructor;
         }
-       player(string n, int h,int en, int a, int d, int e,int c)
+       player(string n, int h, int a, int d,int c)
        {
            //Primary constructor
            setName(n);
