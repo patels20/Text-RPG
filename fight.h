@@ -11,16 +11,14 @@ int userfightInt = 0;
 //Success Equations
 void fight(player player1, monster mon)
 {
+
     bool won = false;
     int playerAttack1 = player1.getAttack() - mon.getDefense();
     int monsterAttack1 = mon.getAttack() - player1.getDefense();
-    int opac = 100 - player1.getDefense();
-
     do
     {
         do
             {
-
 
                 int random = rand() % 100;
                 int random2 = rand() % 100;
@@ -114,9 +112,6 @@ void fight(player player1, monster mon)
                             system("pause");
                             system("cls");
                             break;
-                        case 4:
-                            system("cls");
-                            break;
                         default:
                             cout << "Invalid Fight Option" << endl;
                             goto a;
@@ -125,7 +120,7 @@ void fight(player player1, monster mon)
                             break;
                     }
             }
-            while((mon.health >= 0) && (player1.health >= 0));   // 33 <= 0 or 44 <= 0
+            while(!(mon.health <= 0) && !(player1.health <= 0));   // 33 <= 0 or 44 <= 0
             if(mon.health <= 0)
             {
                 won = true;
@@ -139,7 +134,7 @@ void fight(player player1, monster mon)
                 exit(1);
             }
     }
-    while(!(won) || !(player1.health <= 0));
+    while(!(won) && !(player1.health <= 0));
     if(player1.health > mon.health)
     {
         system("cls");
