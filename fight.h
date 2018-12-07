@@ -27,10 +27,11 @@ void fight(player player1, monster mon)
                 cout << "\t\t\tHealth :" << player1.getHealth() << "\t\t\t\t Health : " << mon.getHealth() << endl;
                 cout << "\t\t\tAttack :" << player1.getAttack() << "\t\t\t\t Attack : " << mon.getAttack() << endl;
                 cout << "\t\t\tDefense :" << player1.getDefense() << "\t\t\t\t Defense : " << mon.getDefense() << endl;
+                cout << "\n\t\t\tCash : " << player1.cash << endl;
                 cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
                 cout << "\t\t\t\t\t\t\tYou're Turn" << endl;
                 cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
-                cout << "\t\t\t\t\t1. Attack \t\t2.Dodge\t\t3.Heal"<< endl;
+                cout << "\t\t\t\t\t1. Attack \t2.Dodge\t\t3.Heal"<< endl;
                 cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
                 cin >> userfightInt;
                 }
@@ -107,20 +108,22 @@ void fight(player player1, monster mon)
                             }
                             break;
                         case 3:
-                            if(player1.health == 100)
-                            {
-                                cout << "Healing won't do anything when you're at full!" << endl;
-                            }
-                            else if((player1.health + 10) > 100)
-                            {
-                                cout << "You've healed to max!" << endl;
-                                player1.setHealth(100);
-                            }
-                            else
+                            if((player1.health + 10) > 100)
                             {
                                 cout << "You've regained " << 10 << " health!" << endl;
                                 player1.setHealth(player1.health+10);
                                 cout << "Current Health :" << player1.getHealth() << endl;
+
+                                if(random2 <= 35)
+                                {
+                                    cout <<mon.getName() << " has successfully landed a hit." << endl;
+                                    cout << "You've taken " << monsterAttack1 << endl;
+                                    player1.setHealth((player1.getHealth()-monsterAttack1));
+                                }
+                                else
+                                {
+                                    cout << "Monster has missed an attack" << endl;
+                                }
                             }
                             system("pause");
                             system("cls");
@@ -151,6 +154,11 @@ void fight(player player1, monster mon)
          cout <<"\t\t\t\t\t\t  Congratulation you've won!" << endl;
          cout <<"\t\t\t\t\t\t     You've beaten " << mon.getName() << endl;
          cout <<"\t\t\t\t\t\tYou've Advanced to the next level \n" << endl;
+         if(player1.getProg() == 2)
+         {
+             cout << "  You've found 30 BTC from "<< mon.getName() << endl;
+             player1.setCash(30);
+         }
          cout <<"**************************************************************************************************************************\n" << endl;
         system("pause");
     }
