@@ -13,10 +13,9 @@ int main()
 
     string gameStarter = "";
     char game = 'S';
-    cout <<"Enter you're name : " << endl;
+    cout <<"Enter your name : " << endl;
     cin >> gameStarter;
     system("cls");
-    a:
     cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
     cout <<"\t\t\t\t\t\tWelcome to the Adventures of " << gameStarter << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
@@ -27,6 +26,7 @@ int main()
     {
         case 'C':
         case 'c':
+            {
             system("cls");
             cout <<"Dungeon Adventures : Text Mania " << endl;
             Sleep(900);
@@ -37,14 +37,18 @@ int main()
             cout <<"Language : C++"<<endl;
             Sleep(900);
             cout <<"Published December 7th 2018" <<endl;
+            system("cls");
+            }
         break;
         case 'Q':
         case 'q':
+            {
             system("cls");
             cout <<"You're Leaving Dungeon Adventures " << endl;
             Sleep(900);
             system("cls");
             cout <<"Goodbye " << endl;
+            }
         break;
         case 'S':
         case 's':
@@ -53,19 +57,16 @@ int main()
             cout << "Please pick one of the characters below:";
             cout << "\n\nWizard: Weapon: Staff" << endl;
             cout << "    \tHealth:      100"<<endl;
-            cout << "       \tEnergy:      100"<<endl;
             cout << "   \tAttack:      30"<<endl;
             cout << "       \tDefense:     20"<<endl;
             cout << "    \tCash:        300"<<endl;
             cout << "\n\nArcher: Weapon: Bow and Arrow\n";
             cout << "    \tHealth:      100"<<endl;
-            cout << "       \tEnergy:      100"<<endl;
             cout << "   \tAttack:      40"<<endl;
             cout << "       \tDefense:     10"<<endl;
             cout << "    \tCash:        100"<<endl;
             cout << "\n\nWarrior:Weapon: Shield and Sword\n";
             cout << "    \tHealth:      100"<<endl;
-            cout << "       \tEnergy:      100"<<endl;
             cout << "   \tAttack:      25"<<endl;
             cout << "       \tDefense:     25"<<endl;
             cout << "    \tCash:        250"<<endl;
@@ -79,13 +80,17 @@ int main()
             cout <<"3: Warrior" << endl;
             Sleep(900);
             cin >> userInput;
-            for(int i = 1; i <= 5; i++){
+            b:
             switch(userInput)
             {
                 case 1:
+                    cout << "You've selected Wizard " << endl;
+                    Sleep(900);
+                    system("cls");
+
                     {
                         player player1("Wizard",100,25,15,0);
-                    //health,attack,defense,cash -Player
+                    //health,energy,attack,defense -Player
                     //health,attack,defense - Monster
                     if(player1.progression = 1)
                     {
@@ -97,7 +102,8 @@ int main()
                     }
                      if(player1.progression = 3)
                     {
-                        level3(player1,monster("Clerk",100,30,15));
+
+                        level3(player("Wizard",100,25,15,30),monster("Clerk",100,30,15));
                     }
                      if(player1.progression = 4)
                     {
@@ -110,6 +116,9 @@ int main()
                     break;
                     }
                 case 2:
+                    cout << "You've selected Archer " << endl;
+                    Sleep(900);
+                    system("cls");
                     {
                     player player1("Archer",100,35,5,0);
                     if(player1.progression = 1)
@@ -122,7 +131,7 @@ int main()
                     }
                      if(player1.progression = 3)
                     {
-                        level3(player1,monster("Clerk",100,30,15));
+                        level3(player("Archer",100,35,5,30),monster("Clerk",100,30,15));
                     }
                      if(player1.progression = 4)
                     {
@@ -135,9 +144,13 @@ int main()
                     break;
                     }
                 case 3:
+                    cout << "You've selected Warrior " << endl;
+                    Sleep(900);
+                    system("cls");
                     {
                         player player1("Warrior",100,30,10,0);
-					if(player1.progression = 1)
+
+                    if(player1.progression = 1)
                     {
                         level1(player1,monster("Shia",100,25,10));
                     }
@@ -147,7 +160,7 @@ int main()
                     }
                      if(player1.progression = 3)
                     {
-                        level3(player1,monster("Clerk",100,30,15));
+                        level3(player("Wizard",100,30,10,30),monster("Clerk",100,30,15));
                     }
                      if(player1.progression = 4)
                     {
@@ -160,24 +173,26 @@ int main()
                     break;
                     }
                 case 666:
+                    cout << "You've selected Satan " << endl;
+                    Sleep(900);
+                    system("cls");
                     {
                         player player1("SATAN",100,10000,25,0);
-
                     if(player1.progression = 1)
                     {
-                        level1(player1,monster("Shia",100,25,10));
+                        level1(player1,monster("Shia",100,20,12));
                     }
                     if(player1.progression = 2)
                     {
-                        level2(player1,monster("Homeless Guy",100,30,10));
+                        level2(player1,monster("Homeless Guy",100,15,20));
                     }
                      if(player1.progression = 3)
                     {
-                        level3(player1,monster("Clerk",100,30,15));
+                        level3(player("Satan",1000,10000,25,30),monster("Clerk",100,30,5));
                     }
                      if(player1.progression = 4)
                     {
-                        level4(player1,monster("Police Officer",100,35,15));
+                        level4(player1,monster("Police Officer",100,40,40));
                     }
                     if(player1.progression = 5)
                     {
@@ -185,13 +200,17 @@ int main()
                     }
                     break;
                     }
-                default:
-                    cout << " ok" << endl;
 
+                default:
+                    {
+                    cout << " Invalid Option" << endl;
+                    system("cls");
+                    system("pause");
+                    goto b;
+                    break;
+                    }
             }
-            }
-        break;
     }
-    goto a;
     return 0;
 }
+
