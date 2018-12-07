@@ -12,6 +12,7 @@ int userfightInt = 0;
 void fight(player player1, monster mon)
 {
 
+    //Scoped Variables to determine the damage & loop continuation
     bool won = false;
     int playerAttack1 = player1.getAttack() - mon.getDefense();
     int monsterAttack1 = mon.getAttack() - player1.getDefense();
@@ -19,7 +20,7 @@ void fight(player player1, monster mon)
     {
         do
             {
-
+                //Random integers, random is set for Player & random2 is set for Monster
                 int random = rand() % 100;
                 int random2 = rand() % 100;
                 cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
@@ -38,6 +39,7 @@ void fight(player player1, monster mon)
                     switch(userfightInt)
                     {
                         case 1:
+                            //Random Algorithm to apply damage
                             if(random <=(player1.getAttack()*2)-20)
                             {
                             system("cls");
@@ -46,6 +48,7 @@ void fight(player player1, monster mon)
                             mon.setHealth(mon.getHealth()-playerAttack1);
                             system("pause");
                             system("cls");
+                                //Each Statement has a monster Random conditional. This is one which only gives the enemy a 35% chance
                                 if(random2 <= 35)
                                 {
                                     cout <<mon.getName() << " has successfully landed a hit." << endl;
@@ -80,6 +83,7 @@ void fight(player player1, monster mon)
                             }
                             break;
                         case 2:
+                            //Dodge mechanic which also makes the enemy never hit
                             cout << "You've Dodge the attack" << endl;
                             system("pause");
                             system("cls");
@@ -91,6 +95,7 @@ void fight(player player1, monster mon)
                             }
                             break;
                         case 3:
+                            //Health mechanic which also allows the enemy to damage during this turn
                             if((player1.getHealth() != 0))
                             {
                                 cout << "You've regained " << 10 << " health!" << endl;
@@ -120,6 +125,7 @@ void fight(player player1, monster mon)
                             break;
                     }
             }
+        //The conditions to end the turn whether the enemy or player has lost all of it's health
             while(!(mon.health <= 0) && !(player1.health <= 0));   // 33 <= 0 or 44 <= 0
             if(mon.health <= 0)
             {
@@ -134,6 +140,7 @@ void fight(player player1, monster mon)
                 exit(1);
             }
     }
+    //checks if the monster wins or we won
     while(!(won) && !(player1.health <= 0));
     if(player1.health > mon.health)
     {
@@ -146,6 +153,7 @@ void fight(player player1, monster mon)
         system("pause");
     }
 }
+//This function is an exact copy but has some tweaks to have an different outcome for the final boss fight
 void fightThanos(player player1, monster mon)
 {
     bool won = false;
