@@ -272,9 +272,14 @@ void level5(player player1, monster mon)
     Sleep(500);
     cout <<"F : Fight"<< endl;
     Sleep(500);
-    cout <<"Decide : You do not have a choice just type in F or f. ";
-    cin >> userInt;
-
-
+    cout <<"Decide : You do not have a choice" << endl;
+	system("pause");
+	system("clr");
+	
+	
+	fight(player1,mon);
+	
+	
+	exit(1);
 }
 
