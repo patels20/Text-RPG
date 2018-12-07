@@ -218,7 +218,9 @@ void level4(player player1, monster mon){
     {
         case 'A':
         case 'a':
-            cout << "Why wouldn't you go down fighting";
+            cout << "Why wouldn't you go down fighting" << endl;
+            cout <<"Game Over" << endl;
+            exit(1);
         break;
         case 'F':
         case 'f':
@@ -229,6 +231,7 @@ void level4(player player1, monster mon){
         case 'B':
         case 'b':
             {
+
             cout << "Enter in a 1 or a 2 to see if you successfully bribed the cop or not";
             cin >> x;
             if(x == 1){
@@ -274,12 +277,14 @@ void level5(player player1, monster mon)
     Sleep(500);
     cout <<"Decide : You do not have a choice" << endl;
 	system("pause");
-	system("clr");
-	
-	
-	fight(player1,mon);
-	
-	
+	system("cls");
+
+
+	fightThanos(player1,mon);
+	ShellExecute(NULL, "open", "https://www.youtube.com/watch?v=dQw4w9WgXcQ", NULL, NULL, SW_SHOWNORMAL);
+
+
 	exit(1);
 }
+
 
