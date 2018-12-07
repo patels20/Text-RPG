@@ -71,7 +71,7 @@ void fight(player player1, monster mon)
                                 }
                                 else
                                 {
-                                    cout << "Monster has missed an attack" << endl;
+                                    cout << mon.getName() << " has missed its attack" << endl;
                                 }
                             system("pause");
                             system("cls");
@@ -90,7 +90,7 @@ void fight(player player1, monster mon)
                                 }
                                 else
                                 {
-                                    cout << "Monster has missed an attack" << endl;
+                                    cout <<mon.getName() << " has missed its attack" << endl;
                                 }
                                 system("pause");
                                 system("cls");
@@ -102,7 +102,7 @@ void fight(player player1, monster mon)
                             system("cls");
                             if(random2 <= 101)
                             {
-                                cout << "Monster has missed his/her attack" << endl;
+                                cout << mon.getName() << " has missed its attack" << endl;
                             system("pause");
                             system("cls");
                             }
@@ -122,7 +122,7 @@ void fight(player player1, monster mon)
                                 }
                                 else
                                 {
-                                    cout << "Monster has missed an attack" << endl;
+                                    cout << mon.getName() << " has missed an attack" << endl;
                                 }
                             }
                             system("pause");

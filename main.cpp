@@ -57,28 +57,25 @@ int main()
             cout << "Please pick one of the characters below:";
             cout << "\n\nWizard: Weapon: Staff" << endl;
             cout << "    \tHealth:      100"<<endl;
-            cout << "   \tAttack:      30"<<endl;
-            cout << "       \tDefense:     20"<<endl;
-            cout << "    \tCash:        300"<<endl;
+            cout << "   \tAttack:      25"<<endl;
+            cout << "       \tDefense:     15"<<endl;
             cout << "\n\nArcher: Weapon: Bow and Arrow\n";
             cout << "    \tHealth:      100"<<endl;
-            cout << "   \tAttack:      40"<<endl;
-            cout << "       \tDefense:     10"<<endl;
-            cout << "    \tCash:        100"<<endl;
+            cout << "   \tAttack:      35"<<endl;
+            cout << "       \tDefense:     5"<<endl;
             cout << "\n\nWarrior:Weapon: Shield and Sword\n";
             cout << "    \tHealth:      100"<<endl;
-            cout << "   \tAttack:      25"<<endl;
-            cout << "       \tDefense:     25"<<endl;
-            cout << "    \tCash:        250"<<endl;
+            cout << "   \tAttack:      30"<<endl;
+            cout << "       \tDefense:     10"<<endl;
             Sleep(1000);
             cout <<"\nDecide :"<<endl;
-            Sleep(900);
+            Sleep(500);
             cout <<"1: Wizard" << endl;
-            Sleep(900);
+            Sleep(500);
             cout << "2: Archer"<< endl;
-            Sleep(900);
+            Sleep(500);
             cout <<"3: Warrior" << endl;
-            Sleep(900);
+            Sleep(500);
             cin >> userInput;
             b:
             switch(userInput)
@@ -177,7 +174,7 @@ int main()
                     Sleep(900);
                     system("cls");
                     {
-                        player player1("SATAN",100,10000,25,0);
+                        player player1("SATAN",100,10000,25,10000);
                     if(player1.progression = 1)
                     {
                         level1(player1,monster("Shia",100,20,12));
