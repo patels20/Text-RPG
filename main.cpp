@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-    wizard player1("Wizard",100,25,15);
+    wizard player1("Wizard",100,25,15);  // instantiate new player objects
     archer player2("Archer",100,35,5);
     warrior player3("Warrior",100,30,10);
     int cash =0;
@@ -27,17 +27,17 @@ int main()
     cout <<"S : Start Game \t\t C: Credits " << endl;
     cout <<"Q : Quit " << endl;
     cin >> game;
-    switch(game)
+    switch(game)  //game mode switch
     {
         case 'C':
         case 'c':
-            {
+            {		// credit menu
             system("cls");
             cout <<"Dungeon Adventures : Text Mania " << endl;
             Sleep(900);
-            cout <<"Written By : Shail Patel , William Kelsey , Akshar Patel " << endl;
+            cout <<"Written By : Shail Patel , Will Kelsey , Akshar Patel " << endl;
             Sleep(900);
-            cout <<"Software Used : Code Blocks " << endl;
+            cout <<"Software Used : Code Blocks, GitHub, GitKraken" << endl;
             Sleep(900);
             cout <<"Language : C++"<<endl;
             Sleep(900);
@@ -47,7 +47,7 @@ int main()
         break;
         case 'Q':
         case 'q':
-            {
+            {		// quit menu
             system("cls");
             cout <<"You're Leaving Dungeon Adventures " << endl;
             Sleep(900);
@@ -57,11 +57,11 @@ int main()
         break;
         case 'S':
         case 's':
-            {
+            {		// game start
             system("cls");
             int userInput = 0;
-            b:
-            cout << "Please pick one of the characters below:";
+            b:  // goto
+            cout << "Please pick one of the characters below:";  	//display menu for player types
             cout << "\n\nWizard: Weapon: Staff" << endl;
             cout << "    \tHealth:      100"<<endl;
             cout << "   \tAttack:      25"<<endl;
@@ -84,9 +84,9 @@ int main()
             cout <<"3: Warrior" << endl;
             Sleep(900);
             cin >> userInput;
-            switch(userInput)
+            switch(userInput)  	// user input case
             {
-                case 1:
+                case 1:  // game path for wizard
                     cout << "You've selected Wizard " << endl;
                     Sleep(900);
                     system("cls");
@@ -97,7 +97,7 @@ int main()
                    // player player1("Wizard",100,25,15,0);
                     if(player1.progression = 1)
                     {
-                        level1(player1,monster("Shia",100,250,10));
+                        level1(player1,monster("Shia",100,250,10));  //level creation VV
                     }
                     if(player1.progression = 2)
                     {
@@ -118,7 +118,7 @@ int main()
                     }
                     break;
                     }
-                case 2:
+                case 2:  // game path for archer
                     cout << "You've selected Archer " << endl;
                     Sleep(900);
                     system("cls");
@@ -145,7 +145,7 @@ int main()
                     }
                     break;
                     }
-                case 3:
+                case 3:  // game path for warrior
                     cout << "You've selected Warrior " << endl;
                     Sleep(900);
                     system("cls");
@@ -173,7 +173,7 @@ int main()
                     }
                     break;
                     }
-                case 666:
+                case 666:  // test GOD mode.  you can beat thanos with this one
                     cout << "You've selected Satan " << endl;
                     Sleep(900);
                     system("cls");
