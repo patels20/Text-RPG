@@ -1,7 +1,6 @@
 #include "player.h"
 #include "monster.h"
 #include "fight.h"
-#include "store.h"
 
 using namespace std;
 
@@ -39,10 +38,6 @@ void level1(player player1, monster mon)
             case 'F':
             case 'f':
                 fight(player1,mon);
-                if(player1.getProg() == 2)
-                {
-                    player1.setCash(30);
-                }
             break;
             case 'R':
             case 'r':
@@ -131,13 +126,6 @@ void level3(player player1, monster mon)
 {
     char userInt;
     system("cls");
-
-    cout << "Throughout your journey you've encountered a Shop" << endl;
-    shop(player1);
-
-
-
-
     cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
     cout << "\t\t\t\t\t\tWelcome To Level 3" << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
@@ -172,6 +160,7 @@ void level3(player player1, monster mon)
         case 'F':
         case 'f':
             fight(player1,mon);
+            cout << "You've got a secret item!" << endl;
 
         break;
         case 'P':
