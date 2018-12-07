@@ -95,7 +95,7 @@ int main()
                    // player player1("Wizard",100,25,15,0);
                     if(player1.progression = 1)
                     {
-                        level1(player1,monster("Shia",100,25,10));
+                        level1(player1,monster("Shia",100,250,10));
                     }
                     if(player1.progression = 2)
                     {
