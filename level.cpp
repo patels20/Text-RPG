@@ -1,6 +1,7 @@
 #include "player.h"
 #include "monster.h"
 #include "fight.h"
+#include "store.h"
 
 using namespace std;
 
@@ -20,6 +21,7 @@ void level1(player player1, monster mon)
     Sleep(2500);
     cout << "\t\t\t\t\tMy God, theres blood everywhere!" << endl;
     Sleep(2500);
+    a:
     cout << "The choice is yours " << player1.getName()<< endl;
     Sleep(2500);
     cout <<"R : Run " << endl;
@@ -33,25 +35,34 @@ void level1(player player1, monster mon)
 
     switch(userInt)
     {
-        case 'F':
-        case 'f':
-            fight(player1,mon);
 
-
-        break;
-        case 'R':
-        case 'r':
-            cout << "You've Advanced to Level 2" << endl;
-            player1.progression+=1;
-            system("pause");
-            system("cls");
+            case 'F':
+            case 'f':
+                fight(player1,mon);
+                if(player1.getProg() == 2)
+                {
+                    player1.setCash(30);
+                }
             break;
-        case 'q':
-        case 'Q':
-            exit(1);
+            case 'R':
+            case 'r':
+                cout << "Shia LeBeouf declared war on North Korea" << endl;
+                Sleep(1200);
+                cout << "Meaning the planet is nearing it's destruction" << endl;
+                Sleep(1200);
+                cout <<" Death is waiting" << endl;
+                system("pause");
+                exit(1);
+                break;
+            case 'q':
+            case 'Q':
+                exit(1);
 
-        default:
-            cout << "Invalid Input" << endl;
+            default:
+                system("cls");
+                cout << "Invalid Input" << endl;
+                system("pause");
+                goto a;
             break;
     }
 }
@@ -97,7 +108,7 @@ char userInt;
         break;
         case 'M':
         case 'm':
-            cout << "The kind heart of yours has been a horrendous decision" << endl;
+            cout << "The kind heart of yours has made a horrendous decision" << endl;
             Sleep(2000);
             cout <<" Shia lebeouf used nuke " << endl;
             Sleep(1000);
@@ -120,6 +131,13 @@ void level3(player player1, monster mon)
 {
     char userInt;
     system("cls");
+
+    cout << "Throughout your journey you've encountered a Shop" << endl;
+    shop(player1);
+
+
+
+
     cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
     cout << "\t\t\t\t\t\tWelcome To Level 3" << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------ " << endl;
@@ -148,6 +166,7 @@ void level3(player player1, monster mon)
     Sleep(900);
     cout <<"Decide : ";
     cin >> userInt;
+    system("cls");
      switch(userInt)
     {
         case 'F':
@@ -235,11 +254,7 @@ void level4(player player1, monster mon){
             break;
     }
 
-
-
 }
-
-
 void level5(player player1, monster mon)
 {
     char userInt;
@@ -270,4 +285,6 @@ void level5(player player1, monster mon)
     cout <<"Decide : You do not have a choice just type in F or f. ";
     cin >> userInt;
 
+
 }
+
