@@ -1,4 +1,7 @@
 #include "player.h"
+#include "wizard.h"
+#include "archer.h"
+#include "warrior.h"
 #include "monster.h"
 
 using namespace std;
@@ -20,38 +23,19 @@ void fight(player player1, monster mon)
 
                 int random = rand() % 100;
                 int random2 = rand() % 100;
-                if(player1.getProg() <= 2 && player1.getProg() >=1)
-                {
                 cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
                 cout << "\t\t\t"<<player1.getName()<<" Status \t\t\t\t "<<mon.getName()<<" Status" << endl;
                 cout << "\t\t\tHealth :" << player1.getHealth() << "\t\t\t\t Health : " << mon.getHealth() << endl;
                 cout << "\t\t\tAttack :" << player1.getAttack() << "\t\t\t\t Attack : " << mon.getAttack() << endl;
                 cout << "\t\t\tDefense :" << player1.getDefense() << "\t\t\t\t Defense : " << mon.getDefense() << endl;
-                cout << "\n\t\t\tCash : " << player1.cash << endl;
                 cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
                 cout << "\t\t\t\t\t\t\tYou're Turn" << endl;
                 cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
                 cout << "\t\t\t\t\t1. Attack \t2.Dodge\t\t3.Heal"<< endl;
                 cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
                 cin >> userfightInt;
-                }
-                else
-                {
-                    cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
-                    cout << "\t\t\t"<<player1.getName()<<" Status \t\t\t\t "<<mon.getName()<<" Status" << endl;
-                    cout << "\t\t\tHealth :" << player1.getHealth() << "\t\t\t\t Health : " << mon.getHealth() << endl;
-                    cout << "\t\t\tAttack :" << player1.getAttack() << "\t\t\t\t Attack : " << mon.getAttack() << endl;
-                    cout << "\t\t\tDefense :" << player1.getDefense() << "\t\t\t\t Defense : " << mon.getDefense() << endl;
-                    cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
-                    cout << "\t\t\t\t\t\t\tYou're Turn" << endl;
-                    cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
-                    cout << "\t\t\t\t\t1. Attack \t\t2.Dodge\t\t3.Heal\t\t4.View Items"<< endl;
-                    cout << "------------------------------------------------------------------------------------------------------------------------\n" << endl;
-                    cin >> userfightInt;
-
-                }
                 system("cls");
-
+                a:
                     switch(userfightInt)
                     {
                         case 1:
@@ -71,7 +55,7 @@ void fight(player player1, monster mon)
                                 }
                                 else
                                 {
-                                    cout << mon.getName() << " has missed its attack" << endl;
+                                    cout << mon.getName()<<" has missed an attack" << endl;
                                 }
                             system("pause");
                             system("cls");
@@ -90,7 +74,7 @@ void fight(player player1, monster mon)
                                 }
                                 else
                                 {
-                                    cout <<mon.getName() << " has missed its attack" << endl;
+                                    cout << mon.getName()<<"has missed an attack" << endl;
                                 }
                                 system("pause");
                                 system("cls");
@@ -102,18 +86,19 @@ void fight(player player1, monster mon)
                             system("cls");
                             if(random2 <= 101)
                             {
-                                cout << mon.getName() << " has missed its attack" << endl;
+                                cout << mon.getName()<<" has missed his/her attack" << endl;
                             system("pause");
                             system("cls");
                             }
                             break;
                         case 3:
-                            if((player1.health + 10) > 100)
+                            if((player1.getHealth() != 0))
                             {
                                 cout << "You've regained " << 10 << " health!" << endl;
                                 player1.setHealth(player1.health+10);
                                 cout << "Current Health :" << player1.getHealth() << endl;
-
+                                system("pause");
+                                system("cls");
                                 if(random2 <= 35)
                                 {
                                     cout <<mon.getName() << " has successfully landed a hit." << endl;
@@ -122,7 +107,7 @@ void fight(player player1, monster mon)
                                 }
                                 else
                                 {
-                                    cout << mon.getName() << " has missed an attack" << endl;
+                                    cout << mon.getName()<<" has missed an attack" << endl;
                                 }
                             }
                             system("pause");
@@ -133,12 +118,12 @@ void fight(player player1, monster mon)
                             break;
                         default:
                             cout << "Invalid Fight Option" << endl;
+                            goto a;
                             system("pause");
                             system("cls");
                             break;
                     }
             }
-
             while(!(mon.health <= 0 || player1.health <= 0));   // 33 <= 0 or 44 <= 0
             if(mon.health <= 0)
             {
@@ -154,11 +139,6 @@ void fight(player player1, monster mon)
          cout <<"\t\t\t\t\t\t  Congratulation you've won!" << endl;
          cout <<"\t\t\t\t\t\t     You've beaten " << mon.getName() << endl;
          cout <<"\t\t\t\t\t\tYou've Advanced to the next level \n" << endl;
-         if(player1.getProg() == 2)
-         {
-             cout << "  You've found 30 BTC from "<< mon.getName() << endl;
-             player1.setCash(30);
-         }
          cout <<"**************************************************************************************************************************\n" << endl;
         system("pause");
     }
